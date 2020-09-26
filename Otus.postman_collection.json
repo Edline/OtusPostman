@@ -21,7 +21,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\":\"nam2e11\",\n    \"description\":\"description\",\n    \"expiredAt\":\"2021-08-30 22:58:30\"\n}"
+							"raw": "{\n    \"name\":\"nam2e11\",\n    \"description\":\"description\",\n    \"expiredAt\":\"2021-08-30 22:58:30\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/courses",
@@ -51,7 +54,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"course\": 1,\n    \"level\": 1,\n    \"lessons\": [\n        {\n            \"name\": \"lesson1\",\n            \"tasks\": [\n                {\n                    \"name\": \"task1\",\n                    \"skills\": [\n                        {\n                            \"name\": \"asdas\",\n                            \"value\": 10\n                        },\n                        {\n                            \"name\": \"asdasdasdas\",\n                            \"value\": 10\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"lesson2\",\n            \"tasks\": [\n                {\n                    \"name\": \"task2\",\n                    \"skills\": [\n                        {\n                            \"name\": \"weqwqe\",\n                            \"value\": 30\n                        },\n                        {\n                            \"name\": \"fdgdfdf\",\n                            \"value\": 10\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+							"raw": "{\n    \"id\": 1,\n    \"level\": [{\n        \"id\": 1\n    }],\n    \"lesson\": [\n        {\n            \"name\": \"lesson1\",\n            \"task\": [\n                {\n                    \"name\": \"task1\",\n                    \"skills\": [\n                        {\n                            \"name\": \"asdas\",\n                            \"value\": 10\n                        },\n                        {\n                            \"name\": \"asdasdasdas\",\n                            \"value\": 10\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"name\": \"lesson2\",\n            \"tasks\": [\n                {\n                    \"name\": \"task2\",\n                    \"skills\": [\n                        {\n                            \"name\": \"weqwqe\",\n                            \"value\": 30\n                        },\n                        {\n                            \"name\": \"fdgdfdf\",\n                            \"value\": 10\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/courses/init",
@@ -109,7 +115,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"name\": \"nam2e111212\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}"
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"nam2e111212\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/courses",
@@ -138,7 +147,7 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/v1/courses/49",
+							"raw": "localhost:8080/api/v1/courses/1",
 							"host": [
 								"localhost"
 							],
@@ -147,7 +156,7 @@
 								"api",
 								"v1",
 								"courses",
-								"49"
+								"1"
 							]
 						}
 					},
@@ -172,7 +181,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user\": 1,\n    \"course\": 1,\n    \"level\": 1,\n    \"lesson\": 2\n}"
+							"raw": "{\n    \"user\": 1,\n    \"course\": 1,\n    \"level\": 1,\n    \"lesson\": 2\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/aggregations",
@@ -276,6 +288,21 @@
 				{
 					"name": "Level: create",
 					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "e51676036463fa488ba9716f64844ad0",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-AUTH-TOKEN",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -286,7 +313,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"course\": 1,\n    \"name\": \"nam2e11\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}"
+							"raw": "{\n    \"course\": 1,\n    \"name\": \"first level\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/levels",
@@ -343,7 +373,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 3,\n    \"course\": 1,\n    \"name\": \"nam2e111212\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}"
+							"raw": "{\n    \"id\": 3,\n    \"course\": 1,\n    \"name\": \"nam2e111212\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/levels",
@@ -363,6 +396,21 @@
 				{
 					"name": "Level: get",
 					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "11a35a1f6eb91e7bb560d831235e44ab",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "X-AUTH-TOKEN",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -372,7 +420,7 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/v1/levels/49",
+							"raw": "localhost:8080/api/v1/levels/1",
 							"host": [
 								"localhost"
 							],
@@ -381,7 +429,7 @@
 								"api",
 								"v1",
 								"levels",
-								"49"
+								"1"
 							]
 						}
 					},
@@ -406,7 +454,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"nam2e11\",\n    \"email\": \"dtest@email.com\",\n    \"phone\": \"38050505050\",\n    \"firstName\": \"firstName\"\n}"
+							"raw": "{\n    \"name\": \"nam2e11\",\n    \"email\": \"dtest@email.com\",\n    \"phone\": \"38050505050\",\n    \"firstName\": \"firstName\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/users",
@@ -436,7 +487,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"email\": \"dtest2@email.com\",\n    \"phone\": \"38050505050\",\n    \"firstName\": \"firstName\",\n    \"lastName\": \"nam22sse11\"\n}"
+							"raw": "{\n    \"id\": 1,\n    \"email\": \"dtest2@email.com\",\n    \"phone\": \"38050505050\",\n    \"firstName\": \"firstName\",\n    \"lastName\": \"nam22sse11\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/users",
@@ -526,7 +580,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"nam2e11\",\n    \"description\": \"dtest@email.com\",\n    \"value\": 30\n}"
+							"raw": "{\n    \"name\": \"nam2e11\",\n    \"description\": \"dtest@email.com\",\n    \"value\": 30\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/skills",
@@ -556,7 +613,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"name\": \"nam2e11\",\n    \"description\": \"dtest@email.com\",\n    \"value\": 30\n}"
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"nam2e11\",\n    \"description\": \"dtest@email.com\",\n    \"value\": 30\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/skills",
@@ -646,7 +706,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"fee Moth233\",\n    \"course\": 1,\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}"
+							"raw": "{\n    \"name\": \"fee Moth233\",\n    \"course\": 1,\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/achievements",
@@ -676,7 +739,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"name\": \"fee Month\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}"
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"fee Month\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}",
+							"options": {
+								"raw": {}
+							}
 						},
 						"url": {
 							"raw": "localhost:8080/api/v1/achievements",
@@ -742,6 +808,111 @@
 								"v1",
 								"achievements",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Forms",
+			"item": [
+				{
+					"name": "Aggreagtions form",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Token",
+			"item": [
+				{
+					"name": "Token: create",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test@email.ua",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "JWT Token: create",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "test@email.ua",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/jwt-token",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"jwt-token"
 							]
 						}
 					},
