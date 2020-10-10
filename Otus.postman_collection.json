@@ -115,7 +115,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"name\": \"nam2e111212\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"tst\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}",
 							"options": {
 								"raw": {}
 							}
@@ -171,6 +171,21 @@
 				{
 					"name": "Course Aggregation: create",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -181,7 +196,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user\": 1,\n    \"course\": 1,\n    \"level\": 1,\n    \"lesson\": 2\n}",
+							"raw": "{\n    \"user\": 2,\n    \"course\": 1,\n    \"level\": 1,\n    \"lesson\": 2\n}",
 							"options": {
 								"raw": {}
 							}
@@ -232,6 +247,21 @@
 				{
 					"name": "Course Aggregation:: get",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -241,7 +271,7 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/v1/scores/1/1",
+							"raw": "localhost:8080/api/v1/scores/2/1",
 							"host": [
 								"localhost"
 							],
@@ -250,8 +280,53 @@
 								"api",
 								"v1",
 								"scores",
-								"1",
+								"2",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Course Aggregation:: create score",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": 2,\n    \"course\":1\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/scores",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"scores"
 							]
 						}
 					},
@@ -293,7 +368,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "e51676036463fa488ba9716f64844ad0",
+									"value": "f94bcb4b5dd9dbe1b382bae90903e242",
 									"type": "string"
 								},
 								{
@@ -313,7 +388,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"course\": 1,\n    \"name\": \"first level\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}",
+							"raw": "{\n    \"course\": 1,\n    \"name\": \"seconddd level\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}",
 							"options": {
 								"raw": {}
 							}
@@ -363,6 +438,21 @@
 				{
 					"name": "Level: update",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -373,7 +463,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 3,\n    \"course\": 1,\n    \"name\": \"nam2e111212\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}",
+							"raw": "{\n    \"id\": 1,\n    \"course\": 1,\n    \"name\": \"nam2e111212\",\n    \"description\": \"description\",\n    \"expiredAt\": \"2021-08-30 22:58:30\"\n}",
 							"options": {
 								"raw": {}
 							}
@@ -401,7 +491,7 @@
 							"apikey": [
 								{
 									"key": "value",
-									"value": "11a35a1f6eb91e7bb560d831235e44ab",
+									"value": "1f447e0e71ee05826db25fbe8ca6fd0e",
 									"type": "string"
 								},
 								{
@@ -420,7 +510,7 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/v1/levels/1",
+							"raw": "localhost:8080/api/v1/levels/27",
 							"host": [
 								"localhost"
 							],
@@ -429,7 +519,7 @@
 								"api",
 								"v1",
 								"levels",
-								"1"
+								"27"
 							]
 						}
 					},
@@ -840,16 +930,16 @@
 					"name": "Token: create",
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
+							"type": "apikey",
+							"apikey": [
 								{
-									"key": "password",
-									"value": "12345",
+									"key": "value",
+									"value": "1f447e0e71ee05826db25fbe8ca6fd0e",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "test@email.ua",
+									"key": "key",
+									"value": "X-AUTH-TOKEN",
 									"type": "string"
 								}
 							]
