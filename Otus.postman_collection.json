@@ -11,6 +11,21 @@
 				{
 					"name": "Course: create",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -138,6 +153,21 @@
 				{
 					"name": "Course: get",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [
 							{
@@ -157,6 +187,312 @@
 								"v1",
 								"courses",
 								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Course Aggregation GraphQl",
+			"item": [
+				{
+					"name": "Courses : collection",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  courses {\n    edges {\n      node {\n        id\n        _id\n        level{\n             edges {\n                node {\n                    _id\n                }\n             }\n        }\n        lesson{\n             edges {\n                node {\n                    _id\n                    name\n                    description\n                    task{\n                        edges{\n                            node{\n                                _id\n                                name\n                                description\n                                skills{\n                                    edges{\n                                        node{\n                                            _id\n                                            name\n                                            description\n                                            value\n                                            createdAt\n                                        }\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n             }\n        }\n      }\n    }\n  }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api-platform/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-platform",
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Courses : Filter by name",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  courses(name: \"PHP\"){\n    edges {\n      node {\n        id\n        _id\n        name\n        description\n        createdAt\n        level{\n             edges {\n                node {\n                    _id\n                }\n             }\n        }\n        lesson{\n             edges {\n                node {\n                    _id\n                    name\n                    description\n                    task{\n                        edges{\n                            node{\n                                _id\n                                name\n                                description\n                                skills{\n                                    edges{\n                                        node{\n                                            _id\n                                            name\n                                            description\n                                            value\n                                            createdAt\n                                        }\n                                    }\n                                }\n                            }\n                        }\n                    }\n                }\n             }\n        }\n      }\n    }\n  }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api-platform/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-platform",
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users : collection",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  collectionUsers {\n    edges {\n      node {\n        id\n        _id\n        password\n        email\n        firstName\n        lastName\n        token\n        tokenExpired\n      }\n    }\n  }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api-platform/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-platform",
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User : item",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  itemUser(id: \"/api-platform/users/2\") {\n        id\n        password\n        email\n        firstName\n        lastName\n        token\n        tokenExpired\n  }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api-platform/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-platform",
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User: Filter by Email",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  collectionUsers(email: \"2\") {\n   edges {\n          node {\n         id\n        _id\n        password\n        email\n        firstName\n        lastName\n        token\n        tokenExpired\n          }\n        }\n \n  }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api-platform/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-platform",
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User: Filter by phone",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "{\n  collectionUsers(phone: \"1\") {\n   edges {\n          node {\n         id\n        _id\n        password\n        email\n        firstName\n        lastName\n        token\n        tokenExpired\n          }\n        }\n  }\n}\n",
+								"variables": ""
+							},
+							"options": {
+								"raw": {}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api-platform/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api-platform",
+								"graphql"
 							]
 						}
 					},
@@ -271,11 +607,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/v1/scores/2/1",
+							"raw": "{{host}}/api/v1/scores/2/1",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"v1",
@@ -318,11 +653,10 @@
 							"raw": "{\n    \"user\": 2,\n    \"course\":1\n}"
 						},
 						"url": {
-							"raw": "localhost:8080/api/v1/scores",
+							"raw": "{{host}}/api/v1/scores",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"v1",
@@ -660,6 +994,21 @@
 				{
 					"name": "Skill: create",
 					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "test",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "qwerty",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [
 							{
@@ -930,16 +1279,16 @@
 					"name": "Token: create",
 					"request": {
 						"auth": {
-							"type": "apikey",
-							"apikey": [
+							"type": "basic",
+							"basic": [
 								{
-									"key": "value",
-									"value": "1f447e0e71ee05826db25fbe8ca6fd0e",
+									"key": "username",
+									"value": "email@email.ua",
 									"type": "string"
 								},
 								{
-									"key": "key",
-									"value": "X-AUTH-TOKEN",
+									"key": "password",
+									"value": "12345",
 									"type": "string"
 								}
 							]
@@ -952,6 +1301,10 @@
 								"value": "application/json"
 							}
 						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
 						"url": {
 							"raw": "localhost:8080/api/v1/token",
 							"host": [
@@ -994,11 +1347,10 @@
 							}
 						],
 						"url": {
-							"raw": "localhost:8080/api/v1/jwt-token",
+							"raw": "{{host}}/api/v1/jwt-token",
 							"host": [
-								"localhost"
+								"{{host}}"
 							],
-							"port": "8080",
 							"path": [
 								"api",
 								"v1",
